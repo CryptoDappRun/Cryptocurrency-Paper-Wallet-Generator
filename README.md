@@ -1,5 +1,5 @@
 ## Customize your cryptocurrency wallet address or Private key
-## for example, 0x1234....6666 ,0xabcd...smith.
+## Specify your own words,for example, 0x1234....6666 ,0xabcd...smith.
 https://cryptodapprun.github.io/Cryptocurrency-Paper-Wallet-Generator/
 
 <img src="screen.png" alt="customize-your-wallet-address">
