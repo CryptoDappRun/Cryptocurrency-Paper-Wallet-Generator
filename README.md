@@ -10,10 +10,29 @@ The principle of this tool is to constantly create new wallets, and if there are
 
 ### Lightweight, open-source, universal paper wallet generator
 
+### Include:
+* bitcoin paper wallet generator
+* cardano paper wallet generator
+* xem paper wallet generator
+* cardano paper wallet generator
+* verge paper wallet generator
+* paper wallet generator for ether
+* generate paper wallet
+* dogecoin paper wallet generator
+* bytecoin paper wallet generator
+* altcoin paper wallet generator
+* zcash paper wallet generator
+* bitcoin cash paper wallet generator
+* iota paper wallet generator
+* neo paper wallet generator
+* litecoin paper wallet generator
+* ripple paper wallet generator
+...etc
+
 #### Features
 * Simple, efficient, secure
-* Client-side, works offline
-* Constant updates
+* Client-side, works offline 
+* Constant updates best
 * Transparent, easy to audit
 * Ink-friendly
 * Integrity of files validated; meaning files have not been tampered with (see below)
