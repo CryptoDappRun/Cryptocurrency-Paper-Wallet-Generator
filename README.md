@@ -12,6 +12,7 @@ The principle of this tool is to constantly create new wallets, and if there are
 
 ### Include:
 * bitcoin paper wallet generator
+* Ethereum paper wallet generator
 * cardano paper wallet generator
 * xem paper wallet generator
 * cardano paper wallet generator
