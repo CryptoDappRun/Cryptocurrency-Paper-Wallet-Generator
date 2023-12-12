@@ -6,6 +6,12 @@ https://cryptodapprun.github.io/Cryptocurrency-Paper-Wallet-Generator/
 
 The principle of this tool is to constantly create new wallets, and if there are any that meet the requirements, they will be displayed on the web page. The longer the custom string, the more time it takes to generate.
 
+
+## send fund from your paper wallet offline:
+Bitcoin/Doge/Litecoin:https://github.com/CryptoDappRun/Bitcoin-Signer-Wallet
+Ethereum/Matic/BNB/Cro..: https://github.com/CryptoDappRun/AirWallet-Ethereum-Offline-Free-wallet
+
+
 ### Free, supports offline generation.
 
 ### Lightweight, open-source, universal paper wallet generator
