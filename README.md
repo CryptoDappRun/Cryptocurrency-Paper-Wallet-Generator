@@ -22,6 +22,7 @@ https://github.com/CryptoDappRun/AirWallet-Ethereum-Offline-Free-wallet<br><br>
 ### Include:
 * bitcoin paper wallet generator
 * Ethereum paper wallet generator
+* Binance,Polygon(Matic),Avalanche(AVAX),Arbitrum,Optimism(OP),Base,Cronos(CRO),Gnosis(GNO),Celo(CELO),Fantom(FTM),Linea,Moonbeam(GLMR),Moonriver(MOVR),Beam,Harmony(ONE),Boba,ThunderCore(TT) paper wallet generator.
 * cardano paper wallet generator
 * xem paper wallet generator
 * cardano paper wallet generator
