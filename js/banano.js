@@ -1494,4 +1494,3 @@ bananoPrivKey = function(seedbytes) {
 bananoPubKey = function(privkey) {
   return accountFromHexKey(uint8_hex(nacl_sign_keyPair_fromSecretKey(privkey).publicKey));
 }
-
