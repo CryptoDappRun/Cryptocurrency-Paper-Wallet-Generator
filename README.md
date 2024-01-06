@@ -29,7 +29,6 @@ https://github.com/CryptoDappRun/AirWallet-Ethereum-Offline-Free-wallet<br><br>
 * cardano paper wallet generator
 * verge paper wallet generator
 * paper wallet generator for ether
-* generate paper wallet
 * dogecoin paper wallet generator
 * bytecoin paper wallet generator
 * altcoin paper wallet generator
