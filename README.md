@@ -8,10 +8,15 @@ The principle of this tool is to constantly create new wallets, and if there are
 
 <br>
 
-### Send fund from your paper wallet offline with cold wallet:
-Bitcoin/Doge/Litecoin:
+### Send fund with UniWallet:
+- https://github.com/CryptoDappRun/UniWallet
+
+
+
+### Send fund from your paper wallet *offline* with cold wallet:
+- Bitcoin/Doge/Litecoin:
 https://github.com/CryptoDappRun/Bitcoin-Signer-Wallet<br><br>
-Ethereum/Matic/BNB/Cro..:
+- Ethereum/Matic/BNB/Cro..:
 https://github.com/CryptoDappRun/AirWallet-Ethereum-Offline-Free-wallet<br><br>
 
 
