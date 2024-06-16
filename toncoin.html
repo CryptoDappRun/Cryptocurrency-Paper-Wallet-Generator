@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TonCoin Paper Wallet Generator</title>
+<meta name="description" content="A lightweight, client-side, reliable, fast, open-source universal paper wallet generator supporting almost every major cryptocurrency">
+<meta name="keywords" content="minimal, reliable, fast, universal, paper, wallet, generator, offline, doge, dogecoin, cryptocurrency">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style2.css">
+</head>
+<body  >
+<div id="container"><br>
+<div class="noprint"><button onclick="generate()">Generate</button>
+<button onclick="window.print()">Print</button>
+<a href="index.html"><input type="button" value="Home"/></a>
+
+
+<!---->
+<br>
+<div>
+<label>My address need include(The longer the custom string, the longer the generation time):</label>
+<br>
+<input id="SpecifyKeyword" type="" name=""  placeholder="66">
+<button onclick="generate(true);">Generate custom public address</button>
+ 
+<button onclick="generate(false);">Generate custom private address</button>
+</div>
+<!---->
+
+
+</div>
+
+
+
+
+<table>
+<tr><h1 id="titlePaper">TonCoin Paper Wallet</h1></tr>
+<tr><th class="grayHeaders">Public Address <span id="shareColor">(SHARE)</span></th></tr>
+<tr><td><div id="public"> </div></td></tr>
+<tr><td><div id="public_qr"></div></td></tr>
+<tr><th class="grayHeaders"><div id="secretLabel">Private Key <span id="secretColor">(HEX SECRET)</span></div></th></tr>
+<tr><td><div id="secret"> </div></td></tr>
+<tr><td><div id="secret_qr"></div></td></tr>
+</table>
+</div>
+<script src="js/tonweb.js"></script>
+<script src="js/qrcode.js"></script>
+<script>
+
+
+            const TonWeb = window.TonWeb;
+            const nacl = TonWeb.utils.nacl;
+
+
+async function generate(isPublic) {
+console.log("isPublic",isPublic );
+
+		document.getElementById("public").textContent = "";
+document.getElementById("secret").textContent = "";
+document.getElementById("public_qr").textContent = "";
+document.getElementById("secret_qr").textContent = "";
+const timer = ms => new Promise(res => setTimeout(res, ms)) 
+document.getElementById("public").textContent =   "Generating...";
+
+
+ 
+
+var keyPair  ;
+var pubKey  ;
+var privKey  ;
+
+
+/////////////////////////////////////
+ 
+var CustomString=document.getElementById('SpecifyKeyword').value;
+console.log("CustomString",CustomString );
+console.log("CustomString.length",CustomString.length);
+ 
+
+do {
+
+	await timer(1); 
+
+var step;
+
+
+keyPair = nacl.sign.keyPair();
+var  pubKeyHex = TonWeb.utils.bytesToHex(keyPair.publicKey);
+privKey = TonWeb.utils.bytesToHex(keyPair.secretKey);
+
+
+var tonweb = new TonWeb();
+
+const wallet = tonweb.wallet.create({
+publicKey: keyPair.publicKey,
+wc: 0  // Workchain ID, 0 is the default
+});
+
+// Get the wallet address
+//true, true, true    address start with E (Bounceable)
+//true, true, false   address start with U (not Bounce)
+pubKey = (await wallet.getAddress()).toString(true, true, false);
+
+
+
+if (isPublic) {
+LastString= pubKey.substr(pubKey.length - CustomString.length); 
+
+}else{
+	LastString= privKey.substr(privKey.length - CustomString.length); 
+}
+
+
+ // var LastString = pubKey.substr(pubKey.length - CustomString.length); 
+console.log('LastString:',LastString);
+
+document.getElementById("public").textContent = pubKey;
+ document.getElementById("secret").textContent = privKey;
+ // if (pubKey.includes("888")) {
+
+  // break;
+ // }
+} while (!LastString.includes(CustomString));
+
+//}
+
+   console.log('******pubKey:',pubKey);
+/////////////////////////////////////
+
+
+document.getElementById("public").textContent = pubKey;
+document.getElementById("secret").textContent = privKey;
+document.getElementById("public_qr").textContent = "";
+document.getElementById("secret_qr").textContent = "";
+new QRCode(document.getElementById("public_qr"), {text: pubKey, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});
+new QRCode(document.getElementById("secret_qr"), {text: privKey, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});}
+
+
+
+</script>
+</body>
+</html>
