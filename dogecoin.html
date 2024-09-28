@@ -24,6 +24,9 @@
 <button onclick="generate(true);">Generate custom public address</button>
  
 <button onclick="generate(false);">Generate custom private address</button>
+
+<button  id="saveButton">Downlad</button>
+
 </div>
 <!---->
 
@@ -115,6 +118,40 @@ document.getElementById("public_qr").textContent = "";
 document.getElementById("secret_qr").textContent = "";
 new QRCode(document.getElementById("public_qr"), {text: pubKey, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});
 new QRCode(document.getElementById("secret_qr"), {text: privKey, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});}
+
+
+
+  document.getElementById('saveButton').addEventListener('click', function() {
+
+      const PublicText = document.getElementById("public").innerText;
+  const SecretText = document.getElementById("secret").innerText;
+
+  let FinalText= PublicText + "\n" +SecretText
+
+    // Get the value from the textarea
+   // const text = document.getElementById('textInput').value;
+
+    // Create a Blob from the text
+    const blob = new Blob([FinalText], { type: 'text/plain' });
+
+    // Create a link element
+    const link = document.createElement('a');
+
+    // Create a URL for the Blob and set it as the href attribute of the link
+    link.href = URL.createObjectURL(blob);
+    
+    // Set the download attribute with a filename
+    link.download = 'myfile.txt';
+
+    // Append the link to the document (not necessary to make it visible)
+    document.body.appendChild(link);
+    
+    // Programmatically click the link to trigger the download
+    link.click();
+    
+    // Remove the link from the document
+    document.body.removeChild(link);
+});
 
 
 
